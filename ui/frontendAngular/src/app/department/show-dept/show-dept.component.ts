@@ -24,7 +24,10 @@ export class ShowDeptComponent implements OnInit {
   modalTitle: string;
   activateAddEditComp: boolean = false;
   dep: any;
-  designator: string;
+
+  departmentid: any;
+  departmentname: string;
+  displayedColumns: string[] = ['departmentid', 'departmentname', 'actionbuttons'];
 
   ngOnInit() {
     // 5) also need to call refresh method to the ng init as this is the first executed code on show-dept-component.ts
@@ -49,52 +52,47 @@ export class ShowDeptComponent implements OnInit {
 
   // method adding department to the dialog box
   addDepartment() {
+
+    // swap this lines of code to a default Material Dialog Configurations in order to strictly pass the data from line 58
     const dialogConfig = new MatDialogConfig();
-    // this dialog configuration are not in use anymore since im using a MAT_DIALOG_DEFAULT_OPTIONS in app.module.ts <-----------DOES NOT WORK !!!!
-    // dialogConfig.disableClose = true;
-    // dialogConfig.autoFocus = true;
-    // dialogConfig.hasBackdrop = true;
-    // dialogConfig.position = {
-    //   top: '0', right: '0',
-    // };
-    // dialogConfig.minHeight = '250px';
-    // dialogConfig.minWidth = '250px';
     dialogConfig.disableClose = true;
     dialogConfig.hasBackdrop = true;
     dialogConfig.data = {
-      dep : {
-        DepartmentId: 0,
-        DepartmentName: ''
-      },
-      modalTitle: 'Add Department',
-      activateAddEditComp: true,
-      designator: 'my add department works'
+      departmentid: 0,
+      departmentname: '',
+      modalTitle: 'Add Department'
     };
-
     const dialogRef = this.dialog.open(AddEditDeptComponent, dialogConfig);
-
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog result: ${result}');
+      console.log('dialog result:', result);
     });
+    this.refreshDepList();
   }
 
-  editDepartment(item){
+  editDepartment(dItem1,dItem2){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.hasBackdrop = true;
-
     dialogConfig.data = {
-      dep : item,
-      modalTitle: 'Edit Department',
-      activateAddEditComp: true,
-      designator: 'my edit department works'
+      departmentid: dItem1,
+      departmentname: dItem2,
+      modalTitle: 'Edit Department'
     };
 
     const dialogRef = this.dialog.open(AddEditDeptComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog result: ${result}');
+      console.log('dialog result:', result);
     });
+    this.refreshDepList();
+  }
+  deleteDepartment(myItem){
+    if(confirm('Are you sure?')){
+      this.service.deleteDepartment(myItem.departmentid).subscribe(data =>{
+        alert(data.toString());
+      });
+      this.refreshDepList();
+    }
   }
 }
 

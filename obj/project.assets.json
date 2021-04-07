@@ -1233,20 +1233,20 @@
   },
   "packageFolders": {
     "C:\\Users\\aaron\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\VS2019SharedComponentsToolsAndSDKs\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aaron\\newprojects\\webapiv3\\webAPIv3.csproj",
+      "projectUniqueName": "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj",
       "projectName": "webAPIv3",
-      "projectPath": "C:\\Users\\aaron\\newprojects\\webapiv3\\webAPIv3.csproj",
+      "projectPath": "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj",
       "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aaron\\newprojects\\webapiv3\\obj\\",
+      "outputPath": "C:\\Users\\aaron\\newProjects\\webapiv3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\VS2019SharedComponentsToolsAndSDKs\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
@@ -1327,7 +1327,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

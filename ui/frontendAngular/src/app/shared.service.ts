@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // OBSERVABLES ARE BASICALLY USED TO HANDLE HANLDE ASYNCHRONOUS REQUEST AND RESPONSES
-import { Observable } from 'rxjs';
+import { Observable,throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class SharedService {
   // update DEPARTMENT details API
 
   updateDepartment(val: any) {
-    return this.http.put(this.APIurl + '/department', val);
+    return this.http.put(this.APIurl + '/department', val).pipe(catchError(this.errorHandler));
   }
 
   // delete DEPARTMENT API
@@ -74,4 +75,16 @@ export class SharedService {
 
     return this.http.get<any>(this.APIurl + '/Employee/GetAllDepartmentNames');
   }
+
+
+  errorHandler(error){
+    let errorMessage = '';
+    if(error.error instanceof ErrorEvent){
+      errorMessage = error.error.message;
+    }else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(errorMessage);
+  }
+
 }

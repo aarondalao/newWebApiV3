@@ -139,8 +139,8 @@ namespace webAPIv3.Controllers
             //
             string query =
                 @"
-                    update Department set DepartmentName = '" + dep.DepartmentName + @"'
-                    where DepartmentId = '" + dep.DepartmentId + @"'    ";
+                    update department set departmentname = '" + dep.DepartmentName + @"'
+                    where departmentid = '" + dep.DepartmentId + @"'    ";
             // MS SQL
             //
             // string query =
@@ -163,8 +163,8 @@ namespace webAPIv3.Controllers
             //
             string query =
                 @"
-                    Delete from Department
-                    where DepartmentId = '" + id + @"'
+                    Delete from department
+                    where departmentid = '" + id + @"'
                 ";
             //  MS SQL
             //

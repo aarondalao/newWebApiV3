@@ -1,4 +1,3 @@
-import { MatDialogConfig } from '@angular/material/dialog';
 // initial imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -34,8 +33,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AddDepartmentDialogBodyComponent } from './department/add-department-dialog-body/add-department-dialog-body.component';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -48,11 +46,9 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
     ShowEmpComponent,
     AddEditEmpComponent,
     MyDashboardSchematicComponent,
-    MyNavigationSchematicComponent,
-    AddDepartmentDialogBodyComponent
+    MyNavigationSchematicComponent
   ],
   entryComponents: [
-    AddDepartmentDialogBodyComponent
   ],
   imports: [
     BrowserModule,
@@ -74,9 +70,11 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
     NgbModule
   ],
   providers: [
-  // {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {
-  //   disableClose: true, autoFocus: true, hasBackdrop: true, minHeight: '50%', minWidth: '50%', maxHeight: '800px', maxWidth: '1200px'
-  // } as MatDialogConfig },
+  {
+    provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {
+    disableClose: true, autoFocus: true, hasBackdrop: true, minHeight: '50%', 
+    minWidth: '50%', maxHeight: '800px', maxWidth: '1200px'
+  }},
   SharedService
   ],
   bootstrap: [AppComponent]
