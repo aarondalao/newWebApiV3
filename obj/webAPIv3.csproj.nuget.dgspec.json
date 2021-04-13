@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aaron\\newProjects\\webAPIv3\\webAPIv3.csproj": {}
+    "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aaron\\newProjects\\webAPIv3\\webAPIv3.csproj": {
+    "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aaron\\newProjects\\webAPIv3\\webAPIv3.csproj",
+        "projectUniqueName": "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj",
         "projectName": "webAPIv3",
-        "projectPath": "C:\\Users\\aaron\\newProjects\\webAPIv3\\webAPIv3.csproj",
+        "projectPath": "C:\\Users\\aaron\\newProjects\\webapiv3\\webAPIv3.csproj",
         "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aaron\\newProjects\\webAPIv3\\obj\\",
+        "outputPath": "C:\\Users\\aaron\\newProjects\\webapiv3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\VS2019SharedComponentsToolsAndSDKs\\NuGetPackages",
